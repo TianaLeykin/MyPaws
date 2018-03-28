@@ -1,0 +1,17 @@
+<resources>
+
+    //choose branch
+    <string name="app_name">Paws</string>
+    <string name="choose_existing_branch_button_text">בחר סניף קיים</string>
+    <string name="create_new_branch_button_text">צור סניף חדש</string>
+
+    //initial add employee
+    <string name="add_employee_massage_text">הכנס את פרטי העובדים בסניף</string>
+
+    //initial add employee
+    <string name="next">הבא</string>
+    <string name="prev">חזור</string>
+    <string name="done">סיים</string>
+    <string name="delete">מחק</string>
+
+</resources>
