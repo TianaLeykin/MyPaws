@@ -14,4 +14,11 @@
     <string name="done">סיים</string>
     <string name="delete">מחק</string>
 
+    <string name="name">שם</string>
+    <string name="phone">טלפון</string>
+    <string name="email">מייל</string>
+
+    //for the RecyclerView
+    <string name="action_settings">Settings</string>
+
 </resources>
