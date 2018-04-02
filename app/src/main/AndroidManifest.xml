@@ -16,9 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".InitialAddEmployeesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.InitialAddEmployees" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ManageEmployeesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ManageEmployees" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/editEmployeeCardView"
     android:layout_width="match_parent"
@@ -23,30 +24,33 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/edit_employee_icon"
-            android:text="@string/name"
-            android:textSize="30sp" />
+            android:hint="@string/name"
+            android:textSize="30sp"
+            android:inputType="text"/>
 
-        <TextView
+        <EditText
             android:id="@+id/edit_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_name"
             android:layout_toRightOf="@+id/edit_employee_icon"
-            android:text="@string/phone" />
+            android:hint="@string/phone"
+            android:inputType="phone"/>
 
-        <TextView
+        <EditText
             android:id="@+id/edit_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_phone"
             android:layout_toRightOf="@+id/edit_employee_icon"
-            android:text="@string/email" />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"/>
 
     </RelativeLayout>
 

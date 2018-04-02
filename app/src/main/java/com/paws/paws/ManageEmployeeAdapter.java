@@ -2,6 +2,7 @@ package com.paws.paws;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,33 +10,36 @@ import android.view.ViewGroup;
 import java.util.Collections;
 import java.util.List;
 
-public class EditEmployeeAdapter extends RecyclerView.Adapter<EditEmployeeViewHolder> {
+public class ManageEmployeeAdapter extends RecyclerView.Adapter<EmployeeViewHolder> {
 
     List<EmployeeData> list = Collections.emptyList();
     Context context;
 
-    public EditEmployeeAdapter(List<EmployeeData> list, Context context) {
+    public ManageEmployeeAdapter(List<EmployeeData> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
     @Override
-    public EditEmployeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public EmployeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //Inflate the layout, initialize the View Holder
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.edit_employee_data, parent, false);
-        EditEmployeeViewHolder holder = new EditEmployeeViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.manage_employees_page, parent, false);
+        if (v == null) {
+            Log.i("ManageEmployeeAdapter", "view is null");
+        }
+        EmployeeViewHolder holder = new EmployeeViewHolder(v);
         return holder;
 
     }
 
     @Override
-    public void onBindViewHolder(EditEmployeeViewHolder holder, int position) {
+    public void onBindViewHolder(EmployeeViewHolder holder, int position) {
 
         //Use the provided View Holder on the onCreateViewHolder method to populate the current row on the RecyclerView
-        holder.edit_name.setText(list.get(position).name);
-        holder.edit_phone.setText(list.get(position).phone);
-        holder.edit_email.setText(list.get(position).email);
-        holder.edit_employee_icon.setImageResource(list.get(position).employee_icon);
+        holder.name.setText(list.get(position).name);
+        holder.phone.setText(list.get(position).phone);
+        holder.email.setText(list.get(position).email);
+        holder.employee_icon.setImageResource(list.get(position).employee_icon);
 
         //animate(holder);
 

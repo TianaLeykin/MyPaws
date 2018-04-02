@@ -8,18 +8,18 @@ import android.widget.TextView;
 
 public class EmployeeViewHolder extends RecyclerView.ViewHolder {
 
-        CardView cv;
-        TextView edit_name;
-        TextView edit_phone;
-        TextView edit_email;
-        ImageView edit_employee_icon;
+    CardView cv;
+    TextView name;
+    TextView phone;
+    TextView email;
+    ImageView employee_icon;
 
     EmployeeViewHolder(View itemView) {
             super(itemView);
-            cv = itemView.findViewById(R.id.editEmployeeCardView);
-            edit_name = itemView.findViewById(R.id.edit_name);
-            edit_phone = itemView.findViewById(R.id.edit_phone);
-            edit_email = itemView.findViewById(R.id.edit_email);
-            edit_employee_icon = itemView.findViewById(R.id.edit_employee_icon);
+            cv = itemView.findViewById(R.id.employeeCardView);
+            name = itemView.findViewById(R.id.employee_data_name);
+            phone = itemView.findViewById(R.id.employee_data_phone);
+            email = itemView.findViewById(R.id.employee_data_email);
+            employee_icon = itemView.findViewById(R.id.employee_data_icon);
         }
     }

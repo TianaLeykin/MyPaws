@@ -17,6 +17,7 @@
     <string name="name">שם</string>
     <string name="phone">טלפון</string>
     <string name="email">מייל</string>
+    <string name="id">תעודת זהות</string>
 
     //for the RecyclerView
     <string name="action_settings">Settings</string>
