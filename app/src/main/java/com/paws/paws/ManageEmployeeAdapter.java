@@ -23,13 +23,12 @@ public class ManageEmployeeAdapter extends RecyclerView.Adapter<EmployeeViewHold
     @Override
     public EmployeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //Inflate the layout, initialize the View Holder
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.manage_employees_page, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.employee_data, parent, false);
         if (v == null) {
             Log.i("ManageEmployeeAdapter", "view is null");
         }
         EmployeeViewHolder holder = new EmployeeViewHolder(v);
         return holder;
-
     }
 
     @Override

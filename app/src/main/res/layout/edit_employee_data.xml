@@ -14,7 +14,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layoutDirection="rtl"
+        android:layout_alignParentRight="true">
 
         <ImageView
             android:id="@+id/edit_employee_icon"
@@ -22,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icons8_monkey_26"/>
 
         <EditText
             android:id="@+id/edit_name"
@@ -31,7 +34,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/edit_employee_icon"
             android:hint="@string/name"
-            android:textSize="30sp"
+            android:textAppearance="?android:textAppearanceLarge"
             android:inputType="text"/>
 
         <EditText
@@ -39,8 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_name"
-            android:layout_toRightOf="@+id/edit_employee_icon"
+            android:layout_toEndOf="@+id/edit_employee_icon"
             android:hint="@string/phone"
+            android:textAppearance="?android:textAppearanceMedium"
             android:inputType="phone"/>
 
         <EditText
@@ -48,8 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_phone"
-            android:layout_toRightOf="@+id/edit_employee_icon"
+            android:layout_toEndOf="@+id/edit_employee_icon"
             android:hint="@string/email"
+            android:textAppearance="?android:textAppearanceMedium"
             android:inputType="textEmailAddress"/>
 
     </RelativeLayout>

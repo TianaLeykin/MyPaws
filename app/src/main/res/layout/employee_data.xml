@@ -14,7 +14,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layoutDirection="rtl"
+        android:layout_alignParentRight="true">
 
         <ImageView
             android:id="@+id/employee_data_icon"
@@ -31,30 +33,25 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/employee_data_icon"
             android:text="@string/name"
-            android:textSize="30sp" />
+            android:textAppearance="?android:textAppearanceLarge" />
 
         <TextView
             android:id="@+id/employee_data_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/employee_data_name"
-            android:layout_toRightOf="@+id/employee_data_icon"
-            android:text="@string/phone" />
+            android:layout_toEndOf="@+id/employee_data_icon"
+            android:text="@string/phone"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
         <TextView
             android:id="@+id/employee_data_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/employee_data_phone"
-            android:layout_toRightOf="@+id/employee_data_icon"
-            android:text="@string/email" />
-
-        <TextView
-            android:id="@+id/employee_data_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/employee_data_email"
-            android:layout_toRightOf="@+id/employee_data_icon" />
+            android:layout_toEndOf="@+id/employee_data_icon"
+            android:text="@string/email"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
     </RelativeLayout>
 
