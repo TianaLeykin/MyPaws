@@ -6,6 +6,8 @@ public class EmployeeData {
     public String email;
     public int employee_icon;
 
+    EmployeeData() {}
+
     EmployeeData(String name, String phone, String email, int employee_icon) {
         this.name = name;
         this.phone = phone;

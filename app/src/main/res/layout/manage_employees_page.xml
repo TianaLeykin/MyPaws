@@ -2,14 +2,14 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/manage_employees_page_rl_id">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_employee_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_below="@id/initial_add_employee_text_id"
         android:layout_alignParentEnd="true"
         android:src="@drawable/icons8_plus_24"
         android:layout_margin="16dp" />

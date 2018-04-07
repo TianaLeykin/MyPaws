@@ -2,6 +2,7 @@ package com.paws.paws;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,17 +15,29 @@ import java.util.List;
 
 public class InitialAddEmployeesActivity extends AppCompatActivity {
 
+    List<EmployeeData> data; // The employees
+    EditEmployeeAdapter adapter; //The adapter for the employee list
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.initial_add_employees_page);
 
-        List<EmployeeData> data = fill_with_data();
+        data = fill_with_data();
 
         RecyclerView recyclerView = findViewById(R.id.initial_add_employee_list_recycler);
-        EditEmployeeAdapter adapter = new EditEmployeeAdapter(data, getApplication());
+        adapter = new EditEmployeeAdapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        FloatingActionButton add_employee_button = findViewById(R.id.initial_add_employee_button_id);
+        add_employee_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data.add(0, new EmployeeData());
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         final Button next_btn = findViewById(R.id.initial_add_employee_next_btn);
         if (next_btn == null) {

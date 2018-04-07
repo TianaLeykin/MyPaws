@@ -12,7 +12,9 @@
     <string name="next">הבא</string>
     <string name="prev">חזור</string>
     <string name="done">סיים</string>
+    <string name="save">שמור</string>
     <string name="delete">מחק</string>
+    <string name="cancel">ביטול</string>
 
     <string name="name">שם</string>
     <string name="phone">טלפון</string>

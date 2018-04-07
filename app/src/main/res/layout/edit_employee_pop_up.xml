@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentEnd="true"
+    android:layoutDirection="rtl"
+    android:padding="8dp"
+    android:id="@+id/edit_employee_pop_up_id">
+
+    <include
+        android:id="@+id/include_edit_employee_data"
+        layout="@layout/edit_employee_data" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_employee_pop_up_cancel_btn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="end|bottom"
+        android:theme="@style/Theme.AppCompat.Light"
+        android:background="@null"
+        android:elevation="20dp"
+        android:src="@drawable/icons8_cancel_48"
+        android:contentDescription="@string/cancel"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/add_employee_pop_up_save_btn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/include_edit_employee_data"
+        android:layout_alignParentEnd="true"
+        android:background="@null"
+        android:elevation="20dp"
+        android:text="@string/save"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+    <ImageButton
+        android:id="@+id/add_employee_pop_up_delete_btn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/include_edit_employee_data"
+        android:layout_toStartOf="@id/add_employee_pop_up_save_btn_id"
+        android:background="@null"
+        android:elevation="20dp"
+        android:src="@drawable/icons8_delete_50"
+        android:contentDescription="@string/delete"
+        />
+
+</RelativeLayout>
