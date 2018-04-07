@@ -38,10 +38,6 @@ public class ManageEmployeeAdapter extends RecyclerView.Adapter<EmployeeViewHold
         holder.name.setText(list.get(position).name);
         holder.phone.setText(list.get(position).phone);
         holder.email.setText(list.get(position).email);
-        holder.employee_icon.setImageResource(list.get(position).employee_icon);
-
-        //animate(holder);
-
     }
 
     @Override

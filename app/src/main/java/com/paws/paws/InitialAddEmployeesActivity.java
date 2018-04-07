@@ -63,12 +63,12 @@ public class InitialAddEmployeesActivity extends AppCompatActivity {
 
         List<EmployeeData> data = new ArrayList<>();
 
-        data.add(new EmployeeData("בטמן", "0546121212", "bat@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("סופה", "0540056574", "storm@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("קפטן אמריקה", "05467000000","cap@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("ג'קי צ'אן", "05411111777", "chan@gmail.com",R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("דירק גנטלי", "0540726574", "hollistic_agency@gmail.com",R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("אליס פלאות", "0540756574", "alice@gmail.com",R.drawable.icons8_monkey_26));
+        data.add(new EmployeeData("בטמן", "0546121212", "bat@gmail.com"));
+        data.add(new EmployeeData("סופה", "0540056574", "storm@gmail.com"));
+        data.add(new EmployeeData("קפטן אמריקה", "05467000000","cap@gmail.com"));
+        data.add(new EmployeeData("ג'קי צ'אן", "05411111777", "chan@gmail.com"));
+        data.add(new EmployeeData("דירק גנטלי", "0540726574", "hollistic_agency@gmail.com"));
+        data.add(new EmployeeData("אליס פלאות", "0540756574", "alice@gmail.com"));
 
         return data;
     }

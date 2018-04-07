@@ -34,11 +34,7 @@ public class EditEmployeeAdapter extends RecyclerView.Adapter<EditEmployeeViewHo
         //Use the provided View Holder on the onCreateViewHolder method to populate the current row on the RecyclerView
         holder.edit_name.setText(list.get(position).name);
         holder.edit_phone.setText(list.get(position).phone);
-        holder.edit_email.setText(list.get(position).email);
-        holder.edit_employee_icon.setImageResource(list.get(position).employee_icon);
-
-        //animate(holder);
-
+        holder.edit_email.setText(list.get(position).email);;
     }
 
     @Override

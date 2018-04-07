@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icons8_monkey_26"/>
 
         <TextView
             android:id="@+id/employee_data_name"

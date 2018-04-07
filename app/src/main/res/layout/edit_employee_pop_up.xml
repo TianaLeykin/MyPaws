@@ -1,52 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/edit_employee_pop_up_id"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentEnd="true"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     android:layoutDirection="rtl"
-    android:padding="8dp"
-    android:id="@+id/edit_employee_pop_up_id">
+    android:layout_alignParentStart="true"
+    app:cardElevation="@dimen/activity_vertical_margin">
 
-    <include
-        android:id="@+id/include_edit_employee_data"
-        layout="@layout/edit_employee_data" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_employee_pop_up_cancel_btn_id"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="end|bottom"
-        android:theme="@style/Theme.AppCompat.Light"
-        android:background="@null"
-        android:elevation="20dp"
-        android:src="@drawable/icons8_cancel_48"
-        android:contentDescription="@string/cancel"
-        android:layout_margin="8dp"/>
+        android:padding="8dp"
+        android:background="@color/colorPrimary"
+        android:layoutDirection="rtl"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:id="@+id/add_employee_pop_up_save_btn_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/include_edit_employee_data"
-        android:layout_alignParentEnd="true"
-        android:background="@null"
-        android:elevation="20dp"
-        android:text="@string/save"
-        android:textColor="@color/colorPrimary"
-        android:textAppearance="?android:textAppearanceSmall" />
+        <ImageView
+            android:id="@+id/employee_data_popup_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icons8_monkey_26"/>
 
-    <ImageButton
-        android:id="@+id/add_employee_pop_up_delete_btn_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/include_edit_employee_data"
-        android:layout_toStartOf="@id/add_employee_pop_up_save_btn_id"
-        android:background="@null"
-        android:elevation="20dp"
-        android:src="@drawable/icons8_delete_50"
-        android:contentDescription="@string/delete"
-        />
+        <EditText
+            android:id="@+id/employee_data_popup_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/employee_data_popup_icon"
+            android:hint="@string/name"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColorHint="@color/white"
+            android:inputType="text"/>
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/employee_data_popup_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/employee_data_popup_name"
+            android:layout_toEndOf="@+id/employee_data_popup_icon"
+            android:hint="@string/phone"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColorHint="@color/white"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/employee_data_popup_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/employee_data_popup_phone"
+            android:layout_toEndOf="@+id/employee_data_popup_icon"
+            android:hint="@string/email"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"/>
+
+
+        <ImageButton
+            android:id="@+id/add_employee_popup_cancel_btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/icons8_cancel_26"
+            android:background="@null"
+            android:contentDescription="@string/cancel"/>
+
+        <Button
+            android:id="@+id/add_employee_popup_save_btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/employee_data_popup_email"
+            android:background="@color/orange"
+            android:text="@string/save"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/add_employee_popup_delete_btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@id/add_employee_popup_save_btn_id"
+            android:layout_below="@id/employee_data_popup_email"
+            android:background="@color/orange"
+            android:text="@string/delete"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

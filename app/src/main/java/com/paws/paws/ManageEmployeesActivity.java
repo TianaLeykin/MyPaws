@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -25,6 +26,8 @@ public class ManageEmployeesActivity extends AppCompatActivity {
     private RelativeLayout mRelativeLayout;
     private FloatingActionButton addEmployeeButton;
     private PopupWindow mPopupWindow;
+    private List<EmployeeData> data;
+    private ManageEmployeeAdapter adapter;
 
     int WRAP_CONTENT = -2;
     int MATCH_PARENT = -1;
@@ -34,10 +37,10 @@ public class ManageEmployeesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_employees_page);
         mContext = getApplicationContext();
-        List<EmployeeData> data = fill_with_data();
+        data = fill_with_data();
 
         RecyclerView recyclerView = findViewById(R.id.manage_employee_list_recycler);
-        ManageEmployeeAdapter adapter = new ManageEmployeeAdapter(data, getApplication());
+        adapter = new ManageEmployeeAdapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -85,16 +88,23 @@ public class ManageEmployeesActivity extends AppCompatActivity {
                     mPopupWindow.setElevation(5.0f);
                 }
 
-                // Tell buttons to stop hiding
-                ImageButton deleteButton = customView.findViewById(R.id.add_employee_pop_up_delete_btn_id);
-                deleteButton.bringToFront();
+                // TODO don't forget those buttons
+                Button deleteButton = customView.findViewById(R.id.add_employee_popup_delete_btn_id);
 
-                Button saveButton = customView.findViewById(R.id.add_employee_pop_up_save_btn_id);
-                saveButton.bringToFront();
+                Button saveButton = customView.findViewById(R.id.add_employee_popup_save_btn_id);
+                saveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String name = ((EditText) view.findViewById(R.id.employee_data_popup_name)).getText().toString();
+                        String phone = ((EditText) view.findViewById(R.id.employee_data_popup_phone)).getText().toString();
+                        String email = ((EditText) view.findViewById(R.id.employee_data_popup_email)).getText().toString();
+                        data.add(0, new EmployeeData(name, phone, email));
+                        adapter.notifyDataSetChanged();
+                    }
+                });
 
                 // Get a reference for the custom view close button
-                FloatingActionButton closeButton = customView.findViewById(R.id.add_employee_pop_up_cancel_btn_id);
-                closeButton.bringToFront();
+                ImageButton closeButton = customView.findViewById(R.id.add_employee_popup_cancel_btn_id);
                 // Set a click listener for the popup window close button
                 closeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -128,12 +138,12 @@ public class ManageEmployeesActivity extends AppCompatActivity {
 
         List<EmployeeData> data = new ArrayList<>();
 
-        data.add(new EmployeeData("בטמן", "0546121212", "bat@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("סופה", "0540056574", "storm@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("קפטן אמריקה", "05467000000","cap@gmail.com", R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("ג'קי צ'אן", "05411111777", "chan@gmail.com",R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("דירק גנטלי", "0540726574", "hollistic_agency@gmail.com",R.drawable.icons8_monkey_26));
-        data.add(new EmployeeData("אליס פלאות", "0540756574", "alice@gmail.com",R.drawable.icons8_monkey_26));
+        data.add(new EmployeeData("בטמן", "0546121212", "bat@gmail.com"));
+        data.add(new EmployeeData("סופה", "0540056574", "storm@gmail.com"));
+        data.add(new EmployeeData("קפטן אמריקה", "05467000000","cap@gmail.com"));
+        data.add(new EmployeeData("ג'קי צ'אן", "05411111777", "chan@gmail.com"));
+        data.add(new EmployeeData("דירק גנטלי", "0540726574", "hollistic_agency@gmail.com"));
+        data.add(new EmployeeData("אליס פלאות", "0540756574", "alice@gmail.com"));
 
         return data;
     }
