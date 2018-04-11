@@ -87,6 +87,8 @@ public class ManageEmployeesActivity extends AppCompatActivity {
                 if(Build.VERSION.SDK_INT>=21){
                     mPopupWindow.setElevation(5.0f);
                 }
+                mPopupWindow.setFocusable(true);
+                mPopupWindow.update();
 
                 // TODO don't forget those buttons
                 Button deleteButton = customView.findViewById(R.id.add_employee_popup_delete_btn_id);
